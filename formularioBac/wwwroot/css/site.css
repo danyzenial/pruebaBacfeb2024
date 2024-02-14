@@ -1,0 +1,94 @@
+html {
+    font-size: 14px;
+    font-family: Roboto
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: rgb(210,210,210)!important;
+}
+
+.labelCustom {
+    /*background: #040480;*/
+    background: #b80c18;
+    /*background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(12,12,120,1) 51%);
+    */
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+    font-family: Roboto;
+}
+
+/*@media (min-width: 1200px) {
+    .container {
+        max-width: 900px;
+    }
+}*/
+
+.swal-wide {
+    width: 850px !important;
+}
+
+.headerTable {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: white;
+}
+
+.colorNavbar {
+    /*background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);*/
+    background: rgb(187,54,54);
+    background: linear-gradient(90deg, rgba(187,54,54,1) 25%, rgba(128,4,48,1) 100%, rgba(255,0,44,1) 100%);
+}
+
+.titulos {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 15%, rgba(150,0,11,1) 75%);
+    /*background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(12,12,120,1) 51%);*/
+    font-size: 17px !important;
+    border-radius: 25px;
+    padding-right: 5px;
+}
+
+.btnCustom {
+    background: #1075bb !important;
+    border-color: #1075bb !important;
+  
+    font-weight: bold;
+}
+
+.thCustom {
+    background: #1075bb !important;
+    color: white;
+}
+
+.shadowCuston {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.tblShadowCustom {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    font-family: Roboto
+}

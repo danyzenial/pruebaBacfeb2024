@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Persona>
+
+<div class="container bg-white mt-lg-5 p-4 rounded-3 shadowCuston d-flex align-items-center justify-content-center">
+    <div class="row py-2">
+        <div class="col-lg-5 p-4">
+           
+            <div class="container-fluid mb-3 p-0">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end titulos">
+                    <h5 class="rounded-3 p-2 display-7 text-white text-end"><i class="fa-solid fa-rectangle-list"></i> Formulario</h5>
+                </div>
+            </div>
+
+            <form id="formulario" action="/Home/save" method="post" onsubmit="return validarInfo(event)">
+
+                <div class="row justify-content-md-center mb-3">
+
+                    <div class="col-6 col-sm-7 col-md-8 col-lg-7">
+                        <input type="text" class="form-control" aria-label="nombreCompleto" name="nombreCompleto" id="nombreCompleto" required>
+                    </div>
+                    <div class="col-6 col-sm-5 col-md-4 col-lg-5 text-center">
+                        <p class="p-2 labelCustom">NOMBRE COMPLETO <i class="fa-solid fa-address-card fa-fw"></i></p>
+                    </div>
+
+                    <div class="col-6 col-sm-7 col-md-8 col-lg-7">
+                        <input type="number" class="form-control" aria-label="telefono" name="telefono" id="telefono" required>
+                    </div>
+                    <div class="col-6 col-sm-5 col-md-4 col-lg-5 text-center">
+                        <p class="p-2 labelCustom">TELÉFONO <i class="fa-solid fa-square-phone"></i></p>
+                    </div>
+
+                    <div class="col-6 col-sm-7 col-md-8 col-lg-7">
+                        <input type="number" class="form-control" aria-label="celular" name="celular" id="celular" required>
+                    </div>
+                    <div class="col-6 col-sm-5 col-md-4 col-lg-5 text-center">
+                        <p class="p-2 labelCustom">CELULAR <i class="fa-solid fa-mobile-screen-button"></i></p>
+                    </div>
+
+                    <div class="col-6 col-sm-7 col-md-8 col-lg-7">
+                        <select class="form-select" aria-label="celular" id="fechaNacimiento" name="fechaNacimiento" required>
+                            <option selected value="null">Seleccionar Año</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-sm-5 col-md-4 col-lg-5 text-center">
+                        <p class="p-2 labelCustom">AÑO DE NACIMIENTO <i class="fa-solid fa-calendar-xmark"></i></p>
+                    </div>
+
+                </div>
+
+                <p class="text-start fst-italic">*Todos los campos son obligatorios.</p>
+
+                <button class="btn btn-secondary btnCustom" type="submit" id="sendInfo">Guardar <i class="fa-solid fa-floppy-disk"></i></button>
+
+            </form>
+        </div>
+        <div class="col-lg-7 p-0 p-lg-4 ">
+
+           
+            <div class="container-fluid mb-3">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end titulos">
+                    <h5 class="rounded-3 p-2 display-7 text-white text-end"><i class="fa-solid fa-table"></i> Lista de Personas</h5>
+                </div>
+            </div>
+
+            <div class="container pb-3 pt-3">
+                <table class="table table-responsive table-sm text-center tblShadowCustom">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Celular</th>
+                            <th>Año de Nacimiento</th>
+                            <th>Fecha Creación</th>
+                            <th>Acción</th>
+                         </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        @foreach (var persona in Model)
+                        {
+                            <tr>
+                                <td>@persona.Nombre</td>
+                                <td>@persona.Telefono</td>
+                                <td>@persona.Celular</td>
+                                <td>@persona.FechaNacimiento</td>
+                                <td>@persona.FechaCreacion</td>
+                                <td>
+                                    <form id="formulario2" asp-action="Delete" method="post" onsubmit="return confirmDelete(event)">
+                                        <input type="hidden" name="deleteBtn" value="@persona.Id" />
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
